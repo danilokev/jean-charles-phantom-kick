@@ -1,0 +1,30 @@
+#ifndef GAMEOVERSTATE_H
+#define GAMEOVERSTATE_H
+
+#include "GameState.h"
+#include <SFML/Graphics.hpp>
+#include <string>
+
+class GameOverState : public GameState {
+private:
+    static GameOverState* instance;
+    GameOverState();
+    
+    sf::Font font;
+    sf::Texture backgroundTexture;
+    sf::Sprite backgroundSprite;
+    sf::Text gameOverText;
+    sf::Text scoreText;
+    sf::Text exitText;
+    
+    int currentScore;
+    
+public:
+    static GameOverState* getInstance();
+    void handleInput(sf::RenderWindow &window, StateManager &manager) override;
+    void update(sf::RenderWindow &window, StateManager &manager) override;
+    void render(sf::RenderWindow &window) override;
+    void setScore(int score);
+};
+
+#endif

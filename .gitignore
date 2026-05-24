@@ -1,0 +1,6 @@
+build/
+.DS_Store
+compile_commands.json
+MiJuego
+src/.vscode/
+src/resources/
